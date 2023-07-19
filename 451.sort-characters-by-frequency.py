@@ -10,11 +10,8 @@ from collections import Counter
 class Solution:
     def frequencySort(self, s: str) -> str:
         d = dict(Counter(s))
-        s_sorted = ""
-        d = {k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)}
-        for k, v in d.items():
-            s_sorted += v * k
-        return s_sorted
+        d = dict(sorted(d.items(), key=lambda item: item[1], reverse=True))
+        return "".join(v * k for k, v in d.items())
 
 
 # @lc code=end

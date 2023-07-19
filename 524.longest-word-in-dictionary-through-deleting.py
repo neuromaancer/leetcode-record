@@ -7,10 +7,7 @@
 # @lc code=start
 class Solution:
     def findLongestWord(self, s: str, d: List[str]) -> str:
-        waiting = {}
-        for c in "abcdefghijklmnopqrstuvwxyz":
-            waiting[c] = []
-
+        waiting = {c: [] for c in "abcdefghijklmnopqrstuvwxyz"}
         for word in d:
             # add pointer to beginning of each word
             waiting[word[0]].append((word, 0))
