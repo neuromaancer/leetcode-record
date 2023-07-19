@@ -14,8 +14,5 @@ class Solution:
         Returns:
             int -- location of the needle
         """
-        if needle in haystack:
-            return haystack.index(needle)
-        else:
-            return -1
+        return haystack.index(needle) if needle in haystack else -1
 

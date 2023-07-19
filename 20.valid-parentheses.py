@@ -6,11 +6,11 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         dic = {"(": ")", "{": "}", "[": "]"}
-        stack = list()
+        stack = []
         for char in s:
             if char in dic:
                 stack.append(dic.get(char))
             elif not stack or stack.pop() != char:
                 return False
-        return len(stack) == 0
+        return not stack
 

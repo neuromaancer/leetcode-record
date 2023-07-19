@@ -14,18 +14,16 @@ class Solution:
             str -- count and say string output
         """
         result = "1"
-        for i in range(n - 1):
+        for _ in range(n - 1):
             count = 1
-            temp = list()
+            temp = []
             for idx in range(1, len(result)):
                 if result[idx] == result[idx - 1]:
                     count += 1
                 else:
-                    temp.append(str(count))
-                    temp.append(result[idx - 1])
+                    temp.extend((str(count), result[idx - 1]))
                     count = 1
-            temp.append(str(count))
-            temp.append(result[-1])
+            temp.extend((str(count), result[-1]))
             result = "".join(temp)
         return result
 
